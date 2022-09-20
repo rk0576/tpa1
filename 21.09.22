@@ -1,0 +1,106 @@
+n1=int(input('introduceti primul numar='))
+n2=int(input('introduceti al doilea numar'))
+
+#a)suma numerelor
+def suma(n1,n2):
+    s=n1+n2
+    return s
+print('suma numerelor este', suma(n1,n2))
+
+#b) produsul numerelor
+def produs(n1,n2):
+    p=n1*n2
+    return p
+print('produsul numerelor este',  produs(n1,n2))
+
+#c)media aritmetica
+def ma(n1,n2):
+    ma=(n1*n2)/2
+    return ma
+print('media aritmetica a  numerelor este',  ma(n1,n2))
+#d) cel mai mare divizor comun e)cel mai mic multiplu comun 
+def c2(n1,n2) :
+    while n1!=n2:
+        if n1>n2:
+            n1 = n1- n2
+        else: n2 = n2 - n1
+    return n1
+
+print('cel mai mare divizor comun=', str(c2(n1,n2)))
+print('cel mai mic multiplu comun =', str(n1*n2 // c2(n1,n2)))
+    #f)Numarul minim
+def min(n1,n2):
+    if n1<n2:
+        min=n1
+        return min
+    if n1>n2:
+        min=n2
+        return min
+print("Numarul minim :",min(n1,n2))
+#g) Numarul maxim
+def max(n1,n2):
+    if n1>n2:
+        max=n1
+        return max
+    if n1<n2:
+        max=n2
+        return max
+print("Numarul maxim :",max(n1,n2))
+#h) suma nr in formatul a+b=c
+def sn():
+    a=int(input("a= "))
+    b=int(input("b= "))
+    c=a+b
+    print(a,"+",b,"=",c)
+c=sn()
+#i)produsul nr in formatul a*b=c
+def pr():
+    a=int(input("a= "))
+    b=int(input("b= "))
+    c=a*b
+    print(a,"*",b,"=",c)
+c=pr()
+#j) Toti divizorii comuni
+def td(n1,n2):
+    div=[]
+    for i in range(1,min(n1,n2)+1):
+        if n1%i==n2%i==0:
+            div.append(i)
+    return div
+print("Toti divizorii comuni ai nr sunt:",td(n1,n2))
+    
+ #k)5 multipli comuni
+multipli=[]
+def mc5(n1,n2):
+    x=n1*n2
+    for i in range(5):
+        multipli.append(x)
+        x=x*2
+mc5(n1,n2)
+print('5 multipli comuni sunt',*multipli,sep=" ")
+
+#l)cifre ce se contin in ambele nr
+m=list(map(int, str(n1)))
+l=list(map(int, str(n2)))
+def nrc(l,m):
+    return set(l).intersection(m)
+print("Cifrele care se contin in ambele numere sunt:",nrc(l,m))
+#m)cifrele care sunt in 1 nr si nus in al 2
+s1=[]
+def cs1n2(n1,n2):
+    for element in n1:
+        if element not in n2:
+            s1.append(element)
+    return s1
+print("Cifrele care sunt in primul nr si nu sunt in al doilea nr este:",cs1n2(n1,n2))
+#n)prietene sau nu
+def f(n1):
+    b=[]
+    for i in range(1,n1+1):
+        if n1%i==0:
+            b.append(i)
+    return(len(b))
+if f(n1)==f(n2):
+    print("PRIETENE")
+else:
+     print('nu sunt')
